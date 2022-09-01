@@ -1,6 +1,7 @@
 package br.com.api.controller;
 
 import br.com.api.model.User;
+import br.com.api.repository.UserRepository;
 import br.com.api.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ public class UserController {
 
     @Autowired
     UserService service;
+    @Autowired
+    UserRepository userRepository;
 
     @PostMapping
     public ResponseEntity<String> save(@RequestBody UserJson json) {
